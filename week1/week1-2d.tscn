@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ds5q2slm1dxs"]
+
+[ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://week1/character_body_2d.gd" id="1_3oc5h"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_igg2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoiw8"]
+size = Vector2(125, 130)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uoiw8"]
+
+[node name="Node2D" type="Node2D" unique_id=1955707456]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=673384974]
+script = ExtResource("1_3oc5h")
+
+[node name="player" type="Sprite2D" parent="CharacterBody2D" unique_id=924039370]
+texture = ExtResource("2_igg2f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1774361935]
+position = Vector2(-1.5, -1)
+shape = SubResource("RectangleShape2D_uoiw8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=751252463]
+position = Vector2(460, 511)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=899600048]
+shape = SubResource("WorldBoundaryShape2D_uoiw8")
