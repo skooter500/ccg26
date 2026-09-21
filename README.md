@@ -20,6 +20,7 @@ Greetings fellow octopus
 - [Godot for beginners](https://www.youtube.com/watch?v=LOhfqjmasi0)
 - [GDScript Tutorial](https://www.youtube.com/watch?v=e1zJS31tr88)
 - [5 Games Made in Godot to inspire you each week](https://www.youtube.com/@stayathomedev) 
+- [Class Discord](https://discord.gg/k5FE4GKmF)
 
 ### Lab - Drawing with Code
 
@@ -64,10 +65,16 @@ Import some sprites and get them moving around!
 
 Check out any of the Godot projects on [my github repo](http://github.com/skooter500) for ideas.
 
+
+[![YouTube](http://img.youtube.com/vi/18kMOeygmHA/0.jpg)](https://www.youtube.com/watch?v=18kMOeygmHA)
+
 Take screenshots of whatever you create share on discord, upload to Brightspace to get your engagement mark.
+
+![Sketch](images/p1.2.png)
 
 
 ## Week 2 - Intro to Godot
+
 - Godot 2D and 3D examples
 - Godot 2D nodes
 - Movement and rotation
@@ -77,4 +84,9 @@ Take screenshots of whatever you create share on discord, upload to Brightspace 
 - [Playlists of previous Godot projects](https://www.youtube.com/@skooter500/playlists)
 
 
-## Week 1
+
+## Week 1 - Intro to the course
+- Yoga for programmers
+- Creativity
+- Intro to Godot and the course
+
