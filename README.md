@@ -20,7 +20,7 @@ Greetings fellow octopus
 - [Godot for beginners](https://www.youtube.com/watch?v=LOhfqjmasi0)
 - [GDScript Tutorial](https://www.youtube.com/watch?v=e1zJS31tr88)
 - [5 Games Made in Godot to inspire you each week](https://www.youtube.com/@stayathomedev) 
-- [Class Discord](https://discord.gg/k5FE4GKmF)
+- [Share your work!](https://tudublin-my.sharepoint.com/:w:/g/personal/bryan_duggan_tudublin_ie/IQDSpeLoCMkSRa1MVornwPJzARpwaXmc6O-RNYUh0GPpV54?e=0POJK3)
 
 
 # Week 3 - Game Systems - Movement and shooting
