@@ -22,6 +22,10 @@ Greetings fellow octopus
 - [5 Games Made in Godot to inspire you each week](https://www.youtube.com/@stayathomedev) 
 - [Class Discord](https://discord.gg/k5FE4GKmF)
 
+
+# Week 3 - Game Systems - Movement and shooting
+- Creating a player character
+
 ### Lab - Drawing with Code
 
 ### Learning Outcomes
@@ -72,7 +76,6 @@ Take screenshots of whatever you create share on discord, upload to Brightspace 
 
 ![Sketch](images/p1.2.png)
 
-
 ## Week 2 - Intro to Godot
 
 - Godot 2D and 3D examples
@@ -82,7 +85,6 @@ Take screenshots of whatever you create share on discord, upload to Brightspace 
 - 2D Colors
 - Using variables
 - [Playlists of previous Godot projects](https://www.youtube.com/@skooter500/playlists)
-
 
 
 ## Week 1 - Intro to the course
