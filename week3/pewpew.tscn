@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://deodf4pkyqqki"]
+
+[ext_resource type="PackedScene" uid="uid://bu78rwx2mgxa2" path="res://week3/player.tscn" id="1_qd4fd"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_iavs4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoiw8"]
+size = Vector2(65, 62)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_uoiw8"]
+points = PackedVector2Array(37.810974, -0.45967102, 65.810974, 61.54033, -60.189026, 60.54033, 0, 0)
+
+[node name="pewpew" type="Node2D" unique_id=2088825911]
+
+[node name="player" parent="." unique_id=896617756 instance=ExtResource("1_qd4fd")]
+position = Vector2(142, 58)
+
+[node name="player2" parent="." unique_id=178846417 instance=ExtResource("1_qd4fd")]
+position = Vector2(267, 185)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=52910980]
+position = Vector2(120, 184)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=365188979]
+shape = SubResource("RectangleShape2D_uoiw8")
+
+[node name="ColorRect" type="ColorRect" parent="Area2D" unique_id=1980427062]
+offset_left = -35.0
+offset_top = -31.0
+offset_right = 33.0
+offset_bottom = 31.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=159140577]
+position = Vector2(391.18903, 109.45967)
+texture = ExtResource("2_iavs4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D" unique_id=838683037]
+shape = SubResource("ConvexPolygonShape2D_uoiw8")
+
+[node name="down_direction" type="Label" parent="." unique_id=1492171908]
+offset_left = 66.0
+offset_top = 272.0
+offset_right = 251.0
+offset_bottom = 295.0
+text = "Hello"

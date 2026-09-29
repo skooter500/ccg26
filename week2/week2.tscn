@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dokpqn7gnj0ha"]
+
+[ext_resource type="Script" uid="uid://dcrfvh3k4x8qs" path="res://week2/week_2.gd" id="1_hpxio"]
+
+[node name="Week2" type="Node2D" unique_id=1930938538]
+script = ExtResource("1_hpxio")

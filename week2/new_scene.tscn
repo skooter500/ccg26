@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bu0i61xsymqaf"]
+
+[ext_resource type="Script" uid="uid://bdkxerh5cb8fx" path="res://week2/new_scene.gd" id="1_adlmx"]
+[ext_resource type="Texture2D" uid="uid://dd4av637g6nr3" path="res://week2/FB_IMG_1789814134874.jpg" id="2_kecmn"]
+[ext_resource type="Script" uid="uid://dmx3wfeyhfp3y" path="res://week2/captainb.gd" id="3_y824j"]
+[ext_resource type="Script" uid="uid://orpulubcolqk" path="res://week2/player.gd" id="4_pnsiq"]
+
+[node name="new_scene" type="Node2D" unique_id=853524254]
+script = ExtResource("1_adlmx")
+speed = 200.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1745624282]
+position = Vector2(601, 364)
+texture = ExtResource("2_kecmn")
+script = ExtResource("3_y824j")
+
+[node name="player" type="Node2D" parent="." unique_id=1779838625]
+position = Vector2(177, 281)
+script = ExtResource("4_pnsiq")
