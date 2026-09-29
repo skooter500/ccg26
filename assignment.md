@@ -1,12 +1,10 @@
 # Creative Coding 2026 Game Design
 
-## Project Brief
-
 ### Shamrock Arcade Machines
 
 Your Commission:
 
-Congratulations! You have been hired as a junior game designer for Shamrock Arcade Machines, an Irish Company producing bespoke, handmade arcade cabinates for the rich and famous. We need games to showcase our new product and we need YOU to make one.
+Congratulations! You have been hired as a junior game designer for Shamrock Arcade Machines, an Irish Company producing bespoke, handmade arcade cabinets for the rich and famous. We need GAMES to showcase our new product and we need YOU to make one.
 
 The brief!
 
@@ -34,8 +32,7 @@ Take inspiration from vector graphics games and user interfaces from the 1960's 
 
 Your game style is "retro-futurism" - what the future (now) looked like from the past. Much of this style comes from vector graphics. Vector grapics, schematics and diagrams can be geometric, beautiful, minimalist and pure. Use this visual style to communicate the elements of your game. Imagine how it felt as a player in the 1980 putting a coin into the machine and experiencing the future!
 
-- **You do not need to be a great programmer or artist.**  Effort, creativity and originality will be rewarded. You are free to come up with your own gameplay and story. #
-
+- **You do not need to be a great programmer or artist.**  Effort, creativity and originality will be rewarded. You are free to come up with your own gameplay and story, characters.
 
 ## Submission Requirements
 - Submit initial proposal on Brightspace 10% pass or fail - ungraded
