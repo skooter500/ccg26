@@ -2,9 +2,13 @@
 
 ## Project Brief
 
-### Vector Graphics Game
+### Shamrock Arcade Machines
 
-Your commission:
+Your Commission:
+
+Congratulations! You have been hired as a junior game designer for Shamrock Arcade Machines, an Irish Company producing bespoke, handmade arcade cabinates for the rich and famous. We need games to showcase our new product and we need YOU to make one.
+
+The brief!
 
 Create a 2D vector graphics game to run on this arcade machine. 
 
@@ -69,3 +73,4 @@ Your grade is made up of four parts. Read each row and ask yourself "which box d
 - **Show your work.** Take screenshots as you go. Keep a few dev notes. It makes the documentation and the demo much easier.
 - **Ask for help.** If you are stuck, ask in class or in the lab. I am a highly paid senior lecturer at your disposal every week!
 - **You do not need to be a great programmer or artist.**  Effort and creativity will be rewarded.
+- [Godot code of conduct applies](https://godotengine.org/code-of-conduct/)
