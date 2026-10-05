@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://deodf4pkyqqki"]
 
+[ext_resource type="Script" uid="uid://dmt82cu811fsd" path="res://week3/pewpew.gd" id="1_2obhp"]
 [ext_resource type="PackedScene" uid="uid://bu78rwx2mgxa2" path="res://week3/player.tscn" id="1_qd4fd"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_iavs4"]
 
@@ -10,6 +11,7 @@ size = Vector2(65, 62)
 points = PackedVector2Array(37.810974, -0.45967102, 65.810974, 61.54033, -60.189026, 60.54033, 0, 0)
 
 [node name="pewpew" type="Node2D" unique_id=2088825911]
+script = ExtResource("1_2obhp")
 
 [node name="player" parent="." unique_id=896617756 instance=ExtResource("1_qd4fd")]
 position = Vector2(142, 58)
@@ -42,3 +44,10 @@ offset_top = 272.0
 offset_right = 251.0
 offset_bottom = 295.0
 text = "Hello"
+
+[node name="bullets_label" type="Label" parent="." unique_id=1871059036]
+offset_left = 108.0
+offset_top = 422.0
+offset_right = 166.0
+offset_bottom = 445.0
+text = "Bullets:"

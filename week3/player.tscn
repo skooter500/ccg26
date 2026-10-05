@@ -5,11 +5,15 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uoiw8"]
 
-[node name="player" type="CharacterBody2D" unique_id=896617756]
+[node name="player" type="CharacterBody2D" unique_id=896617756 node_paths=PackedStringArray("bullet_spawn")]
 script = ExtResource("1_axgff")
 size = 60.0
 line_color = Color(0.9998732, 0.38809937, 0.31987298, 1)
 bullet_scene = ExtResource("2_c0dlp")
+bullet_spawn = NodePath("shoot_point")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=60828734]
 shape = SubResource("CircleShape2D_uoiw8")
+
+[node name="shoot_point" type="Marker2D" parent="." unique_id=113543018]
+position = Vector2(0, -78)
