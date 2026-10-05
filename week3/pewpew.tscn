@@ -18,6 +18,7 @@ position = Vector2(142, 58)
 
 [node name="player2" parent="." unique_id=178846417 instance=ExtResource("1_qd4fd")]
 position = Vector2(267, 185)
+fire_rate = 10.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=52910980]
 position = Vector2(120, 184)
