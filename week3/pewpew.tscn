@@ -3,12 +3,16 @@
 [ext_resource type="Script" uid="uid://dmt82cu811fsd" path="res://week3/pewpew.gd" id="1_2obhp"]
 [ext_resource type="PackedScene" uid="uid://bu78rwx2mgxa2" path="res://week3/player.tscn" id="1_qd4fd"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_iavs4"]
+[ext_resource type="Script" uid="uid://cwju0gqgb2kpo" path="res://week3/geremy.gd" id="4_5aoc4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoiw8"]
 size = Vector2(65, 62)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_uoiw8"]
 points = PackedVector2Array(37.810974, -0.45967102, 65.810974, 61.54033, -60.189026, 60.54033, 0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mimrm"]
+size = Vector2(124, 124)
 
 [node name="pewpew" type="Node2D" unique_id=2088825911]
 script = ExtResource("1_2obhp")
@@ -52,3 +56,16 @@ offset_top = 422.0
 offset_right = 166.0
 offset_bottom = 445.0
 text = "Bullets:"
+
+[node name="geremy" type="Area2D" parent="." unique_id=611881375]
+position = Vector2(296, 403)
+script = ExtResource("4_5aoc4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="geremy" unique_id=1757651656]
+position = Vector2(1, -2)
+shape = SubResource("RectangleShape2D_mimrm")
+
+[node name="Sprite2D" type="Sprite2D" parent="geremy" unique_id=1360046359]
+texture = ExtResource("2_iavs4")
+
+[connection signal="area_entered" from="geremy" to="geremy" method="_on_area_entered"]

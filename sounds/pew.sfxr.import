@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://chik24xlm27vu"
+path="res://.godot/imported/pew.sfxr-12e4b1eca32fa2ed4f76bf9bbbcfea9f.sample"
+
+[deps]
+
+source_file="res://sounds/pew.sfxr"
+dest_files=["res://.godot/imported/pew.sfxr-12e4b1eca32fa2ed4f76bf9bbbcfea9f.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

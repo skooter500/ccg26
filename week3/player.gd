@@ -41,6 +41,7 @@ func _physics_process(delta: float) -> void:
 		b.rotation = rotation
 		b.global_position = bullet_spawn.global_position
 		can_fire = false
+		$AudioStreamPlayer.play()
 		await get_tree().create_timer(1 / fire_rate).timeout
 		can_fire = true
 		
