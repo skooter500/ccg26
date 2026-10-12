@@ -9,8 +9,13 @@
 position = Vector2(621, 341)
 script = ExtResource("1_skkf2")
 
+[node name="circle_thing2" type="Node2D" parent="." unique_id=1598839259]
+position = Vector2(182, 487)
+rotation = -2.2549653
+script = ExtResource("1_skkf2")
+
 [node name="spiral" type="Node2D" parent="." unique_id=1421849803]
-position = Vector2(289, 276)
+position = Vector2(382, 371)
 script = ExtResource("2_uxwi6")
 count = 5.0
 r = 50.0
@@ -29,3 +34,12 @@ offset_top = 51.0
 offset_right = 83.0
 offset_bottom = 237.0
 value = 60.0
+
+[node name="Label" type="Label" parent="." unique_id=1465277001]
+offset_left = 76.0
+offset_top = 82.0
+offset_right = 191.0
+offset_bottom = 103.0
+text = "Circle Width"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2062338070]
