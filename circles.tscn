@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://buyogvansl31j"]
+
+[ext_resource type="Script" uid="uid://be7fhsrjndj21" path="res://circle_thing.gd" id="1_skkf2"]
+[ext_resource type="Script" uid="uid://bupc7ju2ufk50" path="res://spiral.gd" id="2_uxwi6"]
+
+[node name="Node2D" type="Node2D" unique_id=1682224733]
+
+[node name="circle_thing" type="Node2D" parent="." unique_id=1292573635]
+position = Vector2(621, 341)
+script = ExtResource("1_skkf2")
+
+[node name="spiral" type="Node2D" parent="." unique_id=1421849803]
+position = Vector2(289, 276)
+script = ExtResource("2_uxwi6")
+count = 5.0
+r = 50.0
+
+[node name="HSlider" type="HSlider" parent="." unique_id=615774005]
+offset_left = 201.0
+offset_top = 93.0
+offset_right = 725.0
+offset_bottom = 109.0
+max_value = 500.0
+value = 50.0
+
+[node name="VSlider" type="VSlider" parent="." unique_id=755541195]
+offset_left = 67.0
+offset_top = 51.0
+offset_right = 83.0
+offset_bottom = 237.0
+value = 60.0
