@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bu78rwx2mgxa2" path="res://week3/player.tscn" id="1_qd4fd"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_iavs4"]
 [ext_resource type="Script" uid="uid://cwju0gqgb2kpo" path="res://week3/geremy.gd" id="4_5aoc4"]
+[ext_resource type="PackedScene" uid="uid://d274aaqjko51m" path="res://week3/enemy.tscn" id="5_pb16p"]
+[ext_resource type="Script" uid="uid://bby5yxomf5oi8" path="res://week3/path_follow_2d.gd" id="6_7u82c"]
+[ext_resource type="Script" uid="uid://cvb7i6v6oeuy6" path="res://week3/spawner.gd" id="7_pb16p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoiw8"]
 size = Vector2(65, 62)
@@ -13,6 +16,12 @@ points = PackedVector2Array(37.810974, -0.45967102, 65.810974, 61.54033, -60.189
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mimrm"]
 size = Vector2(124, 124)
+
+[sub_resource type="Curve2D" id="Curve2D_pb16p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -43, -92, 0, 0, 0, 0, 33, -145, 0, 0, 0, 0, 157, 21, 0, 0, 0, 0, 125, 103, 0, 0, 0, 0, -176, 109, 0, 0, 0, 0, -43, -93)
+}
+point_count = 6
 
 [node name="pewpew" type="Node2D" unique_id=2088825911]
 script = ExtResource("1_2obhp")
@@ -67,5 +76,25 @@ shape = SubResource("RectangleShape2D_mimrm")
 
 [node name="Sprite2D" type="Sprite2D" parent="geremy" unique_id=1360046359]
 texture = ExtResource("2_iavs4")
+
+[node name="enemy" parent="." unique_id=1502807184 instance=ExtResource("5_pb16p")]
+position = Vector2(-93, -86)
+scale = Vector2(2, 2)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1856976585]
+position = Vector2(200, 200)
+curve = SubResource("Curve2D_pb16p")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1949668993]
+position = Vector2(-43, -92)
+rotation = -0.60895765
+script = ExtResource("6_7u82c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1771713850]
+texture = ExtResource("2_iavs4")
+
+[node name="spawner" type="Node2D" parent="." unique_id=2101386608]
+script = ExtResource("7_pb16p")
+thing = ExtResource("5_pb16p")
 
 [connection signal="area_entered" from="geremy" to="geremy" method="_on_area_entered"]

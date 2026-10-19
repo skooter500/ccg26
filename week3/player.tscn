@@ -21,3 +21,6 @@ position = Vector2(0, -78)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1746989310]
 stream = ExtResource("3_nrbhl")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=327832460]
+drag_vertical_enabled = true

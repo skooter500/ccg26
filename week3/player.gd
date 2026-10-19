@@ -26,9 +26,10 @@ var rot_speed:float = PI
 func _physics_process(delta: float) -> void:
 	var f = Input.get_axis("back", "forward")
 	# print(f)
-	print(transform.y)
-	velocity = f * - transform.y * speed
-
+	# print(transform.y)
+	var target_velocity = f * - transform.y * speed
+	velocity = lerp(velocity, target_velocity, delta)
+	
 	move_and_slide()
 	var r = Input.get_axis("left", "right")
 	rotate(r * rot_speed * delta)
