@@ -22,6 +22,13 @@ Greetings fellow octopus
 - [5 Games Made in Godot to inspire you each week](https://www.youtube.com/@stayathomedev) 
 - [Share your work!](https://tudublin-my.sharepoint.com/:w:/g/personal/bryan_duggan_tudublin_ie/IQDSpeLoCMkSRa1MVornwPJzARpwaXmc6O-RNYUh0GPpV54?e=0POJK3)
 
+# Week 6 - Loops & Spawning
+
+# Week 5 - Flowers
+- Trigonometry and flowers
+
+# Week 4 - Godot Fundamentals 
+- Godot Quick Reference
 
 # Week 3 - Game Systems - Movement and shooting
 - Creating a player character

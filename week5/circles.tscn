@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://buyogvansl31j"]
 
-[ext_resource type="Script" uid="uid://be7fhsrjndj21" path="res://circle_thing.gd" id="1_skkf2"]
-[ext_resource type="Script" uid="uid://bupc7ju2ufk50" path="res://spiral.gd" id="2_uxwi6"]
+[ext_resource type="Script" uid="uid://be7fhsrjndj21" path="res://week5/circle_thing.gd" id="1_slqpt"]
+[ext_resource type="Script" uid="uid://bupc7ju2ufk50" path="res://week5/spiral.gd" id="2_18q14"]
 
 [node name="Node2D" type="Node2D" unique_id=1682224733]
 
 [node name="circle_thing" type="Node2D" parent="." unique_id=1292573635]
 position = Vector2(621, 341)
-script = ExtResource("1_skkf2")
+script = ExtResource("1_slqpt")
 
 [node name="circle_thing2" type="Node2D" parent="." unique_id=1598839259]
 position = Vector2(182, 487)
 rotation = -2.2549653
-script = ExtResource("1_skkf2")
+script = ExtResource("1_slqpt")
 
 [node name="spiral" type="Node2D" parent="." unique_id=1421849803]
 position = Vector2(382, 371)
-script = ExtResource("2_uxwi6")
+script = ExtResource("2_18q14")
 count = 5.0
 r = 50.0
 
