@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Creative Coding for Game Design 2026"
-run/main_scene="uid://deodf4pkyqqki"
+run/main_scene="uid://5xmg4kyjea30"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

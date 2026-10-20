@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://douk850dcvp5v"
+path="res://.godot/imported/Electric Traditions.mp3-5604003707ab002df20ee4b099f692f5.mp3str"
+
+[deps]
+
+source_file="res://sounds/Electric Traditions.mp3"
+dest_files=["res://.godot/imported/Electric Traditions.mp3-5604003707ab002df20ee4b099f692f5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -9,17 +9,19 @@ const JUMP_VELOCITY = -400.0
 const TURN_RATE = 180
 
 func print_stuff():
-	DebugDraw2D.set_text("pos", position)
-	DebugDraw2D.set_text("global position", global_position)
-	DebugDraw2D.set_text("rotation", rotation)
-	DebugDraw2D.set_text("rotation deg", rad_to_deg(rotation))
-	DebugDraw2D.set_text("transform.x", transform.x)
-	DebugDraw2D.set_text("transfrom.y", transform.y)
-	DebugDraw2D.set_text("global_transform.x", global_transform.x)
-	DebugDraw2D.set_text("glbal_transfrom.y", global_transform.y)
-	DebugDraw2D.set_text("global_transform.x", global_transform.x)
-	DebugDraw2D.set_text("global_transform.y", global_transform.y)
-	DebugDraw2D.set_text("vel", velocity)
+	var s = ""
+	s += "pos"+ str(position) + "\n"
+	s += "global position" + str(global_position) + "\n"
+	s += "rotation" + str(rotation) + "\n"
+	s += "rotation deg" + str(rad_to_deg(rotation)) + "\n"
+	s += "transform.x" + str(transform.x) + "\n"
+	s += "transfrom.y" + str(transform.y) + "\n"
+	s += "global_transform.x" + str(global_transform.x) + "\n"
+	s += "glbal_transfrom.y" + str(global_transform.y) + "\n"
+	s += "global_transform.x" + str(global_transform.x) + "\n"
+	s += "global_transform.y" + str(global_transform.y) + "\n"
+	s += "vel" + str(velocity)
+	
 	
 func _process(delta: float) -> void:
 	print_stuff()

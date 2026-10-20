@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl7bn3bgrqbcg"]
+[gd_scene format=3 uid="uid://dl7bn3bgrqbcg"]
 
-[ext_resource type="Script" uid="uid://bbich0lxw8wn5" path="res://dude_bullet.gd" id="1_b6ii7"]
-[ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://explosion.tscn" id="2_u71cm"]
+[ext_resource type="Script" uid="uid://bnu6wnt1gooby" path="res://pewpew/dude_bullet.gd" id="1_b6ii7"]
+[ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://pewpew/explosion.tscn" id="2_u71cm"]
 [ext_resource type="AudioStream" uid="uid://6c271tmj2ceh" path="res://sounds/laserShoot.wav" id="3_jkrdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mugk0"]

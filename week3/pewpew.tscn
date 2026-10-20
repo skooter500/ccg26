@@ -78,7 +78,7 @@ shape = SubResource("RectangleShape2D_mimrm")
 texture = ExtResource("2_iavs4")
 
 [node name="enemy" parent="." unique_id=1502807184 instance=ExtResource("5_pb16p")]
-position = Vector2(-93, -86)
+position = Vector2(-93, -286)
 scale = Vector2(2, 2)
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1856976585]

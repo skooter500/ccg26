@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://byhadckf2ftdm"]
+[gd_scene format=3 uid="uid://byhadckf2ftdm"]
 
-[ext_resource type="Script" uid="uid://cwu1wej2vf2ha" path="res://health.gd" id="1_ledv5"]
+[ext_resource type="Script" uid="uid://d2udoj72f637w" path="res://pewpew/health.gd" id="1_ledv5"]
 [ext_resource type="AudioStream" uid="uid://biq3k2p3qbvjk" path="res://sounds/Powerup18.wav" id="2_bydfv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejtda"]

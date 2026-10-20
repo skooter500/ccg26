@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqp7p5hyewbvj"]
+[gd_scene format=3 uid="uid://cqp7p5hyewbvj"]
 
-[ext_resource type="Script" uid="uid://dvs14auj3fi6k" path="res://ammo.gd" id="1_mulmr"]
+[ext_resource type="Script" uid="uid://nk4q5g2hmsri" path="res://pewpew/ammo.gd" id="1_mulmr"]
 [ext_resource type="AudioStream" uid="uid://ca4o6f1w1ai8t" path="res://sounds/powerUp.wav" id="2_rfx0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejtda"]

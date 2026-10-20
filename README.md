@@ -23,6 +23,7 @@ Greetings fellow octopus
 - [Share your work!](https://tudublin-my.sharepoint.com/:w:/g/personal/bryan_duggan_tudublin_ie/IQDSpeLoCMkSRa1MVornwPJzARpwaXmc6O-RNYUh0GPpV54?e=0POJK3)
 
 # Week 6 - Loops & Spawning
+- See example in week 3
 
 # Week 5 - Flowers
 - Trigonometry and flowers
