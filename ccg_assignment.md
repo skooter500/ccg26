@@ -12,6 +12,19 @@ Create a 2D vector graphics game to run on this arcade machine.
 
 ![Console](images/20260928_125631.jpg)
 
+# Key Bindings (need to double check)
+```
+2614 - left joystick. i think LURD&nbsp; but need to check
+swaq - same for right joystick
+fp - ab buttons for left
+lj - ab buttons for right
+v - 1 player
+c - 2 player
+bla - not sure
+f - side button left
+l - side button right
+```
+
 Your game should:
 
 - Take input from the buttons and joysticks on the machine
