@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://datflfhxecgnw"]
+
+[ext_resource type="Script" uid="uid://fuynbjymm577" path="res://week7/player.gd" id="1_3jkx5"]
+[ext_resource type="Script" uid="uid://dxqjodjxps0v2" path="res://week7/collision_shape_2d.gd" id="2_62a4m"]
+[ext_resource type="PackedScene" uid="uid://cq10xl6xccry7" path="res://week7/enemy.tscn" id="3_ljhwi"]
+[ext_resource type="Script" uid="uid://dn4w7engmib4r" path="res://week7/spawner.gd" id="4_ljhwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoiw8"]
+size = Vector2(44, 83.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mimrm"]
+size = Vector2(66, 61)
+
+[node name="Week7" type="Node2D" unique_id=1802069592]
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1237646479]
+position = Vector2(422.9091, 41.090927)
+script = ExtResource("1_3jkx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1305450353]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_uoiw8")
+script = ExtResource("2_62a4m")
+
+[node name="Label" type="Label" parent="." unique_id=223410978]
+offset_right = 40.0
+offset_bottom = 21.0
+text = "(422.9091, 41.09093)
+0.0
+(422.9091, 41.09093)
+0.0"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=766602095]
+position = Vector2(256, 425)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2137669520]
+position = Vector2(23, 20.5)
+shape = SubResource("RectangleShape2D_mimrm")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1846199658]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="spawner" type="Node2D" parent="." unique_id=1515614938]
+position = Vector2(928, 155)
+script = ExtResource("4_ljhwi")
+enemy_scene = ExtResource("3_ljhwi")
+
+[node name="spawner2" type="Node2D" parent="." unique_id=584809930]
+position = Vector2(183, 297)
+script = ExtResource("4_ljhwi")
+enemy_scene = ExtResource("3_ljhwi")
