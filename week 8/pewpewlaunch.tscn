@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cwe5mv4ajax6q"]
+
+[ext_resource type="Script" uid="uid://daodspegd4psu" path="res://week 8/pewpewlaunch.gd" id="1_ut0ly"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mimrm"]
+font_size = 100
+
+[node name="pewpewlaunch" type="Node2D" unique_id=1710356550]
+script = ExtResource("1_ut0ly")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1814213069]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1096035951]
+offset_left = 202.0
+offset_top = 81.0
+offset_right = 934.0
+offset_bottom = 299.0
+text = "Pew Pew 2026"
+label_settings = SubResource("LabelSettings_mimrm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="start" type="Button" parent="CanvasLayer" unique_id=1417284438]
+offset_left = 455.0
+offset_top = 379.0
+offset_right = 463.0
+offset_bottom = 387.0
+text = "Start"
+
+[node name="quit" type="Button" parent="CanvasLayer" unique_id=1184578828]
+offset_left = 457.0
+offset_top = 453.0
+offset_right = 505.0
+offset_bottom = 482.0
+text = "QUIT"
+
+[node name="quit2" type="Button" parent="CanvasLayer" unique_id=1869701198]
+offset_left = 457.0
+offset_top = 453.0
+offset_right = 505.0
+offset_bottom = 482.0
+text = "QUIT"
+
+[connection signal="pressed" from="CanvasLayer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/quit2" to="." method="_on_quit_pressed"]

@@ -17,9 +17,11 @@ func _physics_process(delta: float) -> void:
 	# position = position + (to_player * delta * speed)
 	velocity = lerp(velocity, to_player * speed, delta * 5)
 	# transform.x = velocity.normalized()
-	var t = Vector2.UP.angle_to(to_player)
-	rotation = t
-	#mmove_and_slide()
+	#var t = Vector2.UP.angle_to(to_player)
+	#rotation = t
+	look_at(player.global_position)
+	rotate(PI / 2.0)
+	move_and_slide()
 	
 	
 	pass

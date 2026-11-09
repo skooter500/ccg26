@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://c5b52ru03rhbc"]
+
+[ext_resource type="FontFile" uid="uid://c7m2s77s7pxfy" path="res://fonts/Minecraft.ttf" id="1_a2rk5"]
+
+[resource]
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_a2rk5")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Creative Coding for Game Design 2026"
-run/main_scene="uid://datflfhxecgnw"
+run/main_scene="uid://cwe5mv4ajax6q"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,6 +26,7 @@ enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg")
 
 [gui]
 
+theme/custom="uid://c5b52ru03rhbc"
 theme/custom_font="uid://0jk2p2kfmllu"
 
 [input]

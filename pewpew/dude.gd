@@ -79,7 +79,7 @@ func _process(delta: float) -> void:
 			
 			# add to my parent
 			# dont add to self, because then if the player moves, the bullet will move
-			get_parent().add_child(b) 
+			add_child(b) 
 			
 			# set its color and linesize the same as mine
 			b.color = color
