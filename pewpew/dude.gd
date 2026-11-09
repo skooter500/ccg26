@@ -29,15 +29,23 @@ extends CharacterBody2D
 @export var lives:int = 100
 @export var ammo:int = 100
 @export var ufo_count:int = 0
-
+var gravity:bool = false
 # If crash create explosion
 @export var explosion:PackedScene
 
 # The timer will reset this later 
 var can_fire = true
 
+func disable_collisions():
+	$CollisionShape2D.disabled = true
+	print("disabled")
+	await get_tree().create_timer(3).timeout
+	print("enabled")
+	$CollisionShape2D.disabled = false
+
 
 func respawn():
+	disable_collisions()
 	# Tween my scale using elastic
 	scale = Vector2.ZERO
 	var tween = create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_IN_OUT)
@@ -48,6 +56,7 @@ func respawn():
 	# Randomly vary the pitch of the audio and play it
 	get_node("Synth2").pitch_scale = randf_range(0.1, 2.2)
 	get_node("Synth2").play()
+	
 
 func _draw() -> void:
 	# Draw the dude's shape
@@ -74,12 +83,13 @@ func _process(delta: float) -> void:
 			# create a bullet
 			# set its position and rotation
 			var b = bullet_scene.instantiate()
+			get_parent().add_child(b) 
+			
 			b.global_position = bullet_spawn.global_position
 			b.global_rotation = bullet_spawn.global_rotation
 			
 			# add to my parent
 			# dont add to self, because then if the player moves, the bullet will move
-			add_child(b) 
 			
 			# set its color and linesize the same as mine
 			b.color = color
@@ -101,6 +111,12 @@ func _physics_process(delta: float) -> void:
 		# move by applying acceration
 		var m = Input.get_axis(forward_input, back_input)
 		acceleration = transform.y * m * speed
+
+		if gravity:		
+			var gravity_well = $"../gravity_well".global_position - global_position
+			gravity_well = gravity_well.normalized()
+			acceleration += gravity_well * 500
+		
 		velocity = velocity + acceleration * delta	
 		var c = move_and_collide(velocity * delta)
 		

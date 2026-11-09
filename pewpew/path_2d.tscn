@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bgqes424lyube"]
+
+[ext_resource type="Script" uid="uid://cx5vfjkkcyfgm" path="res://pewpew/bug_path.gd" id="1_xm3ye"]
+
+[sub_resource type="Curve2D" id="Curve2D_jmugp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 133, 181, 0, 0, 0, 0, 79, 57, 0, 0, 0, 0, 403, -10, 0, 0, 0, 0, 619, 323, 0, 0, 0, 0, 323, 178, 0, 0, 0, 0, 174, 252, 0, 0, 0, 0, 130, 181)
+}
+point_count = 7
+
+[node name="Path2D" type="Path2D" unique_id=951962821]
+curve = SubResource("Curve2D_jmugp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1113887173]
+position = Vector2(133, 181)
+rotation = -1.9815133
+
+[node name="bug" type="Node2D" parent="PathFollow2D" unique_id=91099172]
+script = ExtResource("1_xm3ye")

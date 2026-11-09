@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://bujybr7vxvcig"
+path="res://.godot/imported/spawn_area_sound.sfxr-6935abdecf70d45d496dac9bb49dcea4.sample"
+
+[deps]
+
+source_file="res://spawn_area_sound.sfxr"
+dest_files=["res://.godot/imported/spawn_area_sound.sfxr-6935abdecf70d45d496dac9bb49dcea4.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

@@ -6,12 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://7ffshnxf3qah" path="res://pewpew/ufo.tscn" id="3_6xsbg"]
 [ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://pewpew/explosion.tscn" id="3_c5ar1"]
 [ext_resource type="Script" uid="uid://c5yb222btieol" path="res://pewpew/ufo_spawner.gd" id="4_gm47b"]
-[ext_resource type="PackedScene" uid="uid://otfovfdhyg6k" path="res://pewpew/spiral_node.tscn" id="9_otu4l"]
+[ext_resource type="PackedScene" uid="uid://bgqes424lyube" path="res://pewpew/path_2d.tscn" id="7_aj55d"]
+[ext_resource type="Script" uid="uid://mua8i1vot04l" path="res://pewpew/spawn_area.gd" id="8_jmugp"]
+[ext_resource type="AudioStream" uid="uid://bujybr7vxvcig" path="res://spawn_area_sound.sfxr" id="9_e3dje"]
+[ext_resource type="Script" uid="uid://2lojigk533dq" path="res://pewpew/gravity_well.gd" id="11_jkgrt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoiw8"]
+size = Vector2(216, 116)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uoiw8"]
+radius = 200.12247
 
 [node name="shooter_game" type="Node2D" unique_id=1736664278]
 script = ExtResource("1_c5ar1")
-
-[node name="spiral_node" parent="." unique_id=773424312 instance=ExtResource("9_otu4l")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=361707492]
 
@@ -19,6 +26,7 @@ script = ExtResource("1_c5ar1")
 stream = ExtResource("2_ejtda")
 
 [node name="dude" parent="." unique_id=973215725 instance=ExtResource("2_gm47b")]
+position = Vector2(329, 163)
 rotation = 5.68262
 collision_mask = 5
 color = Color(0, 1, 0.25, 0.847059)
@@ -29,33 +37,9 @@ explosion = ExtResource("3_c5ar1")
 [node name="ufo_spawner" type="Marker2D" parent="." unique_id=8295459]
 script = ExtResource("4_gm47b")
 ufo_scene = ExtResource("3_6xsbg")
-count = 5
-
-[node name="ufo_spawner3" type="Marker2D" parent="." unique_id=397193083]
-position = Vector2(34, -168)
-script = ExtResource("4_gm47b")
-ufo_scene = ExtResource("9_otu4l")
-radius = 500.0
-rate = 5
-auto_spawn = true
-
-[node name="ufo_spawner4" type="Marker2D" parent="." unique_id=1741479155]
-position = Vector2(34, -168)
-script = ExtResource("4_gm47b")
-ufo_scene = ExtResource("9_otu4l")
-radius = 300.0
-count = 10
-rate = 5
-auto_spawn = true
-
-[node name="ufo_spawner5" type="Marker2D" parent="." unique_id=290989449]
-position = Vector2(34, -168)
-script = ExtResource("4_gm47b")
-ufo_scene = ExtResource("9_otu4l")
-radius = 700.0
-count = 30
-rate = 5
-auto_spawn = true
+radius = 100.0
+count = 0
+rate = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=375068205]
 
@@ -94,3 +78,34 @@ text = "ufo_COUNT: 0"
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=190221131]
 position = Vector2(775, 259)
+
+[node name="Path2D" parent="." unique_id=951962821 instance=ExtResource("7_aj55d")]
+position = Vector2(100, 100)
+
+[node name="spawn_area" type="Area2D" parent="." unique_id=1997395096]
+position = Vector2(85, 403)
+script = ExtResource("8_jmugp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn_area" unique_id=771022079]
+position = Vector2(98, -48)
+shape = SubResource("RectangleShape2D_uoiw8")
+
+[node name="ColorRect" type="ColorRect" parent="spawn_area" unique_id=1942592331]
+offset_left = -12.0
+offset_top = -108.0
+offset_right = 209.0
+offset_bottom = 12.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="spawn_area" unique_id=2093984458]
+stream = ExtResource("9_e3dje")
+
+[node name="gravity_well" type="Area2D" parent="." unique_id=1026683473]
+position = Vector2(676, 117)
+script = ExtResource("11_jkgrt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gravity_well" unique_id=1140424565]
+shape = SubResource("CircleShape2D_uoiw8")
+
+[connection signal="body_entered" from="spawn_area" to="spawn_area" method="_on_body_entered"]
+[connection signal="body_entered" from="gravity_well" to="." method="_on_gravity_well_body_entered"]
+[connection signal="body_exited" from="gravity_well" to="." method="_on_gravity_well_body_exited"]

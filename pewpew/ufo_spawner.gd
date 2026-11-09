@@ -18,14 +18,16 @@ func spawn():
 	var color = Color.from_hsv(randf(), 1, 1, 0.9)		
 	for i in count:
 		await get_tree().create_timer(1 / float(rate)).timeout
+		
 		var theta = theta_inc * i
 		var x = sin(theta) * radius
 		var y = - cos(theta) * radius
 		var ufo = ufo_scene.instantiate()
 		# ufo.color = color
-		ufo.position = position + Vector2(x, y)		
-		get_parent().add_child(ufo)
 		
+		ufo.position = Vector2(x, y)		
+		get_parent().add_child(ufo)
+
 func _ready():
 	if auto_spawn:
 		spawn()
