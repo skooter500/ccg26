@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://nb8daasaeu3i"]
+[gd_scene format=3 uid="uid://nb8daasaeu3i"]
 
 [ext_resource type="AudioStream" uid="uid://biv25b73wi16u" path="res://sounds/explosion.wav" id="1_q7epf"]
 
@@ -30,17 +30,17 @@ scale_max = 10.0
 scale_curve = SubResource("CurveTexture_880us")
 alpha_curve = SubResource("CurveTexture_ci5xv")
 
-[node name="explosion" type="GPUParticles2D"]
+[node name="explosion" type="GPUParticles2D" unique_id=415345605]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(-78, -57)
 emitting = false
-amount = 50
+amount = 1000
 lifetime = 5.0
 one_shot = true
 explosiveness = 1.0
 trail_lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_8i2hp")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1584496877]
 stream = ExtResource("1_q7epf")
 autoplay = true

@@ -30,6 +30,7 @@ position = Vector2(329, 163)
 rotation = 5.68262
 collision_mask = 5
 color = Color(0, 1, 0.25, 0.847059)
+turn_rate = 90.0
 speed = 500.0
 lives = 10
 explosion = ExtResource("3_c5ar1")
@@ -38,8 +39,7 @@ explosion = ExtResource("3_c5ar1")
 script = ExtResource("4_gm47b")
 ufo_scene = ExtResource("3_6xsbg")
 radius = 100.0
-count = 0
-rate = 1
+count = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=375068205]
 

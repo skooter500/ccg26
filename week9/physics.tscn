@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://brlrogyn6unfk"]
+
+[ext_resource type="Script" uid="uid://crkvchry73c6p" path="res://week9/player.gd" id="1_pf3li"]
+[ext_resource type="Script" uid="uid://ypcu5oachq8d" path="res://week9/wall.gd" id="2_g76q7"]
+[ext_resource type="PackedScene" uid="uid://b0xmtld1nxl0h" path="res://week9/block.tscn" id="3_6te7m"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uoiw8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoiw8"]
+size = Vector2(93, 25)
+
+[node name="physics" type="Node2D" unique_id=754020072]
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=387981135]
+position = Vector2(500, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=104290452]
+shape = SubResource("WorldBoundaryShape2D_uoiw8")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1638511588]
+position = Vector2(419, 19)
+script = ExtResource("1_pf3li")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1850408486]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_uoiw8")
+
+[node name="wall" type="Node2D" parent="." unique_id=1152848642]
+position = Vector2(494, 487)
+script = ExtResource("2_g76q7")
+block_scene = ExtResource("3_6te7m")
+block_count = 100
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=660999574]
