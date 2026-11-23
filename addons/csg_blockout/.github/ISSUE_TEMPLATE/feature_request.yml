@@ -1,0 +1,34 @@
+name: Feature request / 功能建议
+description: Suggest an idea or improvement. / 提出想法或改进建议。
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        CSG_Blockout is a level prototyping tool, not a modeling tool. General vertex/edge editing, per-face UV editing, and `.map` import are out of scope (see CONTRIBUTING.md). Not sure if your idea fits? Ask anyway.
+        CSG_Blockout 是关卡原型工具，不是建模工具。通用顶点/边编辑、逐面 UV 编辑和 `.map` 导入不在范围内（见 CONTRIBUTING_CN.md）。拿不准也可以先提出来问问。
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do? / 你想完成什么？
+      description: Describe the blockout task and where the current workflow gets in the way. / 描述你的白盒任务，以及现有流程卡在哪里。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution / 建议方案
+      description: How would you like it to work? Shortcuts, viewport interaction, Inspector properties... / 你希望怎样工作？快捷键、视口交互、Inspector 属性……
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Workarounds or other tools / 现有替代方案或其他工具
+      description: How do you work around it today? Does another editor do this well? / 现在怎么绕过？有没有别的编辑器做得好？
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution / 参与意愿
+      options:
+        - label: I'd like to work on this myself. / 我愿意自己来实现。

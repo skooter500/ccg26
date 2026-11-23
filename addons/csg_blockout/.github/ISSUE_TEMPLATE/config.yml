@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contributing guide / 贡献指南
+    url: https://github.com/qwqzhanqwq/Godot-CSG-Blockout/blob/main/CONTRIBUTING.md
+    about: Scope, code conventions, and how to submit a pull request. / 项目范围、代码规范和提交 PR 的方法。
+  - name: Tutorial / 教程
+    url: https://github.com/qwqzhanqwq/Godot-CSG-Blockout/blob/main/TUTORIAL_EN.md
+    about: Usage questions are often answered here. / 使用问题大多能在这里找到答案。

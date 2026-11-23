@@ -84,16 +84,18 @@ func _process(delta: float) -> void:
 			# set its position and rotation
 			var b = bullet_scene.instantiate()
 			get_parent().add_child(b) 
-			
 			b.global_position = bullet_spawn.global_position
 			b.global_rotation = bullet_spawn.global_rotation
+			
+			
+			
 			
 			# add to my parent
 			# dont add to self, because then if the player moves, the bullet will move
 			
 			# set its color and linesize the same as mine
-			b.color = color
-			b.line_size = line_size
+			# b.color = color
+			# b.line_size = line_size
 			
 			can_fire = false
 			ammo = ammo - 1

@@ -6,7 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mugk0"]
 
-[node name="dude_bullet3" type="CharacterBody2D"]
+[node name="shotgun" type="Node2D" unique_id=427462443]
+
+[node name="dude_bullet3" type="CharacterBody2D" parent="." unique_id=877486576]
 collision_layer = 2
 collision_mask = 4
 motion_mode = 1
@@ -15,15 +17,59 @@ script = ExtResource("1_b6ii7")
 speed = 500
 explosion = ExtResource("2_u71cm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dude_bullet3" unique_id=342867357]
 shape = SubResource("RectangleShape2D_mugk0")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="dude_bullet3" unique_id=1757038352]
 one_shot = true
 autostart = true
 
-[node name="LaserShoot" type="AudioStreamPlayer" parent="."]
+[node name="LaserShoot" type="AudioStreamPlayer" parent="dude_bullet3" unique_id=1619998679]
 stream = ExtResource("3_jkrdw")
 autoplay = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="dude_bullet4" type="CharacterBody2D" parent="." unique_id=1221438591]
+rotation = -0.34906584
+collision_layer = 2
+collision_mask = 4
+motion_mode = 1
+velocity = Vector2(0, -500)
+script = ExtResource("1_b6ii7")
+speed = 500
+explosion = ExtResource("2_u71cm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dude_bullet4" unique_id=792254038]
+shape = SubResource("RectangleShape2D_mugk0")
+
+[node name="Timer" type="Timer" parent="dude_bullet4" unique_id=634487235]
+one_shot = true
+autostart = true
+
+[node name="LaserShoot" type="AudioStreamPlayer" parent="dude_bullet4" unique_id=1177390915]
+stream = ExtResource("3_jkrdw")
+autoplay = true
+
+[node name="dude_bullet5" type="CharacterBody2D" parent="." unique_id=1400899658]
+rotation = 0.34906584
+collision_layer = 2
+collision_mask = 4
+motion_mode = 1
+velocity = Vector2(0, -500)
+script = ExtResource("1_b6ii7")
+speed = 500
+explosion = ExtResource("2_u71cm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dude_bullet5" unique_id=325532659]
+shape = SubResource("RectangleShape2D_mugk0")
+
+[node name="Timer" type="Timer" parent="dude_bullet5" unique_id=1388232964]
+one_shot = true
+autostart = true
+
+[node name="LaserShoot" type="AudioStreamPlayer" parent="dude_bullet5" unique_id=217835247]
+stream = ExtResource("3_jkrdw")
+autoplay = true
+
+[connection signal="timeout" from="dude_bullet3/Timer" to="dude_bullet3" method="_on_timer_timeout"]
+[connection signal="timeout" from="dude_bullet4/Timer" to="dude_bullet4" method="_on_timer_timeout"]
+[connection signal="timeout" from="dude_bullet5/Timer" to="dude_bullet5" method="_on_timer_timeout"]

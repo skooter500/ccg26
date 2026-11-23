@@ -1,0 +1,66 @@
+name: Bug report / 问题反馈
+description: Something doesn't work as expected. / 某个功能没有按预期工作。
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please fill in as much as you can. English or Chinese are both fine.
+        感谢反馈！请尽量填写完整，中英文均可。
+  - type: input
+    id: godot-version
+    attributes:
+      label: Godot version / Godot 版本
+      description: Help → About, e.g. `4.7.stable`. / 帮助 → 关于，例如 `4.7.stable`。
+    validations:
+      required: true
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version / 插件版本
+      description: From `plugin.cfg` or the Plugins list in Project Settings. / 见 `plugin.cfg` 或项目设置的插件列表。
+      placeholder: "2.1.0"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system / 操作系统
+      placeholder: "Windows 11 / macOS 15 / Ubuntu 24.04"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      description: Start from an empty scene if possible. / 尽量从空场景开始。
+      placeholder: |
+        1. Add a CSGCombiner3D
+        2. Press Shift + A in the viewport
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior / 预期结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior / 实际结果
+      description: Screenshots or a short clip help a lot. / 附截图或短视频会很有帮助。
+    validations:
+      required: true
+  - type: textarea
+    id: errors
+    attributes:
+      label: Errors / 报错信息
+      description: Copy anything from the Output and Debugger → Errors panels. / 粘贴输出面板和调试器 → 错误面板中的内容。
+      render: text
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context / 补充信息
+      description: A minimal `.tscn` that reproduces the problem is the best thing you can attach. / 能附上一个复现问题的最小 `.tscn` 最好。

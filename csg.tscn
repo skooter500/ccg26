@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://u322ogce7ntn"]
+
+[ext_resource type="Material" uid="uid://bmefame5i7v63" path="res://pew material.tres" id="1_2vtxk"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_y68r1"]
+[ext_resource type="Script" uid="uid://crjgek15e7jkl" path="res://addons/csg_blockout/scripts/shapes/csg_wedge_3d.gd" id="2_b3kin"]
+[ext_resource type="Material" path="res://addons/csg_blockout/res/materials/mat_grid_light.tres" id="3_y68r1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vtxk"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_4l4uv"]
+sky_material = SubResource("ProceduralSkyMaterial_2vtxk")
+
+[sub_resource type="Environment" id="Environment_b3kin"]
+sky = SubResource("Sky_4l4uv")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.5
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=1536604390]
+
+[node name="Character" parent="." unique_id=1664366571 instance=ExtResource("1_y68r1")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2098485666]
+environment = SubResource("Environment_b3kin")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1670882457]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=581146266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7354126, 2.5863647, 0.0925293)
+size = Vector3(2.4708252, 0.24401855, 0.8149414)
+material = ExtResource("1_2vtxk")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D" unique_id=1339158041]
+material = ExtResource("1_2vtxk")
+
+[node name="Wedge" type="CSGPolygon3D" parent="." unique_id=2081737553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2689288, -0.14508238, 0.79852)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0.7803345, 0.12200928, 0.7803345, 0)
+depth = 1.4371065
+material = ExtResource("1_2vtxk")
+script = ExtResource("2_b3kin")
+size = Vector3(0.7803345, 0.12200928, 1.4371065)
+
+[node name="Box" type="CSGBox3D" parent="." unique_id=1759185128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21244621, -0.5, 0.5311656)
+use_collision = true
+size = Vector3(17.5, 1, 13.5)
+material = ExtResource("3_y68r1")

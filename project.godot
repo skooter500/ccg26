@@ -15,6 +15,17 @@ run/main_scene="uid://cwe5mv4ajax6q"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+CogitoGlobals="*uid://d0q71mnw6am11"
+CogitoGameConfig="*uid://cxtlt4g0h4i3e"
+CogitoSceneManager="*uid://dwd61hyssfy55"
+CogitoQuestManager="*uid://c33l80dv3c6c5"
+MenuTemplateManager="*uid://dru131jwwih1y"
+InputRouter="*uid://byboexsy6hrjq"
+InputHelper="*uid://cholww48njaeh"
+Audio="*uid://cujwm7u5pvogl"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -22,7 +33,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg")
+enabled=PackedStringArray("res://addons/cogito/plugin.cfg", "res://addons/csg_blockout/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/godot_state_charts/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/quick_audio/plugin.cfg")
 
 [gui]
 

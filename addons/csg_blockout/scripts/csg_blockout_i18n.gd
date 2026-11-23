@@ -1,0 +1,661 @@
+@tool
+class_name CsgBlockoutI18n
+extends RefCounted
+
+## Feature string tables merged on top of TABLE (each script defines `const STRINGS`).
+const EXTRA_TABLES: Array[GDScript] = [
+	preload("res://addons/csg_blockout/scripts/i18n/strings_core.gd"),
+	preload("res://addons/csg_blockout/scripts/i18n/strings_tools.gd"),
+	preload("res://addons/csg_blockout/scripts/i18n/strings_bake.gd"),
+	preload("res://addons/csg_blockout/scripts/i18n/strings_outliner.gd"),
+	preload("res://addons/csg_blockout/scripts/i18n/strings_metrics.gd"),
+]
+
+static var _merged: Dictionary = {}
+
+## TABLE plus every EXTRA_TABLES entry, built once.
+static func table() -> Dictionary:
+	if _merged.is_empty():
+		_merged = TABLE.duplicate()
+		for extra: GDScript in EXTRA_TABLES:
+			_merged.merge(extra.get(&"STRINGS"), true)
+	return _merged
+
+const TABLE: Dictionary = {
+	"CSG_BLOCKOUT_SETTINGS": {
+		"zh": "CSG Blockout 设置",
+		"en": "CSG Blockout Settings",
+		"ja": "CSG Blockout 設定",
+		"ko": "CSG Blockout 설정",
+		"es": "Configuración de CSG Blockout",
+		"pt": "Configurações do CSG Blockout",
+		"ru": "Настройки CSG Blockout"
+	},
+	"BOX": {
+		"zh": "立方体",
+		"en": "Box",
+		"ja": "直方体",
+		"ko": "상자",
+		"es": "Caja",
+		"pt": "Caixa",
+		"ru": "Куб"
+	},
+	"CYLINDER": {
+		"zh": "圆柱体",
+		"en": "Cylinder",
+		"ja": "円柱",
+		"ko": "원기둥",
+		"es": "Cilindro",
+		"pt": "Cilindro",
+		"ru": "Цилиндр"
+	},
+	"MESH": {
+		"zh": "网格",
+		"en": "Mesh",
+		"ja": "メッシュ",
+		"ko": "메시",
+		"es": "Malla",
+		"pt": "Malha",
+		"ru": "Сетка"
+	},
+	"POLYGON": {
+		"zh": "多边形",
+		"en": "Polygon",
+		"ja": "ポリゴン",
+		"ko": "다각형",
+		"es": "Polígono",
+		"pt": "Polígono",
+		"ru": "Многоугольник"
+	},
+	"SPHERE": {
+		"zh": "球体",
+		"en": "Sphere",
+		"ja": "球体",
+		"ko": "구",
+		"es": "Esfera",
+		"pt": "Esfera",
+		"ru": "Сфера"
+	},
+	"TORUS": {
+		"zh": "圆环",
+		"en": "Torus",
+		"ja": "トーラス",
+		"ko": "토러스",
+		"es": "Toro",
+		"pt": "Toro",
+		"ru": "Тор"
+	},
+	"UNION": {
+		"zh": "并集",
+		"en": "Union",
+		"ja": "和集合",
+		"ko": "합집합",
+		"es": "Unión",
+		"pt": "União",
+		"ru": "Объединение"
+	},
+	"INTERSECTION": {
+		"zh": "交集",
+		"en": "Intersection",
+		"ja": "積集合",
+		"ko": "교집합",
+		"es": "Intersección",
+		"pt": "Interseção",
+		"ru": "Пересечение"
+	},
+	"SUBTRACTION": {
+		"zh": "差集",
+		"en": "Subtraction",
+		"ja": "差集合",
+		"ko": "차집합",
+		"es": "Sustracción",
+		"pt": "Subtração",
+		"ru": "Вычитание"
+	},
+	"MATERIAL": {
+		"zh": "材质",
+		"en": "Material",
+		"ja": "マテリアル",
+		"ko": "머티리얼",
+		"es": "Material",
+		"pt": "Material",
+		"ru": "Материал"
+	},
+	"REGEN_PREVIEW_TOOLTIP": {
+		"zh": "重新生成预览实例",
+		"en": "Regenerate Preview Instances",
+		"ja": "プレビューインスタンスを再生成",
+		"ko": "미리보기 인스턴스 재생성",
+		"es": "Regenerar instancias de vista previa",
+		"pt": "Regenerar instâncias de pré-visualização",
+		"ru": "Перегенерировать экземпляры предпросмотра"
+	},
+	"BAKE_INSTANCES_TOOLTIP": {
+		"zh": "将生成的实例烘焙至场景中 (使其永久保留)",
+		"en": "Bake generated instances into scene (Make permanent)",
+		"ja": "生成されたインスタンスをシーンにベイク (永続化)",
+		"ko": "생성된 인스턴스를 씬에 베이크 (영구 유지)",
+		"es": "Hornear instancias generadas en la escena (hacer permanente)",
+		"pt": "Assar instâncias geradas na cena (tornar permanente)",
+		"ru": "Запечь созданные экземпляры в сцену (сделать постоянными)"
+	},
+	"SELECT_MATERIAL": {
+		"zh": "选择材质",
+		"en": "Select Material",
+		"ja": "マテリアルを選択",
+		"ko": "머티리얼 선택",
+		"es": "Seleccionar material",
+		"pt": "Selecionar material",
+		"ru": "Выбрать материал"
+	},
+	"WARN_SELECT_CSG_SHAPE": {
+		"zh": "请先选择一个 CSGShape3D 节点以添加新 CSG 节点",
+		"en": "Please select a CSGShape3D node first to add a new CSG node",
+		"ja": "新しいCSGノードを追加するには、まずCSGShape3Dノードを選択してください",
+		"ko": "새 CSG 노드를 추가하려면 먼저 CSGShape3D 노드를 선택하세요",
+		"es": "Por favor, seleccione un nodo CSGShape3D primero para agregar un nuevo nodo CSG",
+		"pt": "Selecione primeiro um nó CSGShape3D para adicionar um novo nó CSG",
+		"ru": "Пожалуйста, сначала выберите узел CSGShape3D, чтобы добавить новый узел CSG"
+	},
+	"WARN_UNSUPPORTED_CSG_TYPE": {
+		"zh": "未知或不支持的 CSG 节点类型",
+		"en": "Unknown or unsupported CSG node type",
+		"ja": "不明または未対応のCSGノードタイプです",
+		"ko": "알 수 없거나 지원되지 않는 CSG 노드 유형입니다",
+		"es": "Tipo de nodo CSG desconocido o no compatible",
+		"pt": "Tipo de nó CSG desconhecido ou não suportado",
+		"ru": "Неизвестный или неподдерживаемый тип узла CSG"
+	},
+	"ADD_NODE": {
+		"zh": "添加 %s",
+		"en": "Add %s",
+		"ja": "%s を追加",
+		"ko": "%s 추가",
+		"es": "Añadir %s",
+		"pt": "Adicionar %s",
+		"ru": "Добавить %s"
+	},
+	"REFRESH": {
+		"zh": "刷新",
+		"en": "Refresh",
+		"ja": "更新",
+		"ko": "새로고침",
+		"es": "Actualizar",
+		"pt": "Atualizar",
+		"ru": "Обновить"
+	},
+	"BAKE": {
+		"zh": "烘焙",
+		"en": "Bake",
+		"ja": "ベイク",
+		"ko": "베이크",
+		"es": "Hornear",
+		"pt": "Assar",
+		"ru": "Запечь"
+	},
+	"CHANGE_CSG_OP": {
+		"zh": "更改 CSG 操作",
+		"en": "Change CSG Operation",
+		"ja": "CSG操作を変更",
+		"ko": "CSG 작업 변경",
+		"es": "Cambiar operación CSG",
+		"pt": "Alterar operação CSG",
+		"ru": "Изменить операцию CSG"
+	},
+	"CREATE_NODE": {
+		"zh": "创建 %s",
+		"en": "Create %s",
+		"ja": "%s を作成",
+		"ko": "%s 생성",
+		"es": "Crear %s",
+		"pt": "Criar %s",
+		"ru": "Создать %s"
+	},
+	"GRID_LIGHT": {
+		"zh": "灰白网格",
+		"en": "Light Grid",
+		"ja": "ライトグリッド",
+		"ko": "라이트 그리드",
+		"es": "Cuadrícula clara",
+		"pt": "Grade clara",
+		"ru": "Светлая сетка"
+	},
+	"GRID_DARK": {
+		"zh": "深灰网格",
+		"en": "Dark Grid",
+		"ja": "ダークグリッド",
+		"ko": "다크 그리드",
+		"es": "Cuadrícula oscura",
+		"pt": "Grade escura",
+		"ru": "Тёмная сетка"
+	},
+	"GRID_ORANGE": {
+		"zh": "橙色网格",
+		"en": "Orange Grid",
+		"ja": "オレンジグリッド",
+		"ko": "오렌지 그리드",
+		"es": "Cuadrícula naranja",
+		"pt": "Grade laranja",
+		"ru": "Оранжевая сетка"
+	},
+	"MATERIAL_NONE": {
+		"zh": "无材质(白模)",
+		"en": "No Material (White)",
+		"ja": "マテリアルなし(白モデル)",
+		"ko": "머티리얼 없음(흰색)",
+		"es": "Sin material (blanco)",
+		"pt": "Sem material (branco)",
+		"ru": "Без материала (белый)"
+	},
+	"MATERIAL_CUSTOM": {
+		"zh": "自定义材质",
+		"en": "Custom Material",
+		"ja": "カスタムマテリアル",
+		"ko": "사용자 정의 머티리얼",
+		"es": "Material personalizado",
+		"pt": "Material personalizado",
+		"ru": "Пользовательский материал"
+	},
+	"APPLY_MATERIAL_TO_SELECTED": {
+		"zh": "应用材质到选中节点",
+		"en": "Apply Material to Selected",
+		"ja": "選択したノードにマテリアルを適用",
+		"ko": "선택한 노드에 머티리얼 적용",
+		"es": "Aplicar material a seleccionados",
+		"pt": "Aplicar material aos selecionados",
+		"ru": "Применить материал к выбранным"
+	},
+	"APPLY_MATERIAL": {
+		"zh": "应用材质",
+		"en": "Apply Material",
+		"ja": "マテリアルを適用",
+		"ko": "머티리얼 적용",
+		"es": "Aplicar material",
+		"pt": "Aplicar material",
+		"ru": "Применить материал"
+	},
+	"CLEAR_MATERIAL": {
+		"zh": "清除材质",
+		"en": "Clear Material",
+		"ja": "マテリアルをクリア",
+		"ko": "머티리얼 제거",
+		"es": "Limpiar material",
+		"pt": "Limpar material",
+		"ru": "Очистить материал"
+	},
+	"LANGUAGE_TOOLTIP": {
+		"zh": "语言 / Language (Auto / EN / 中文 / 日本語 / 한국어 / Español / Português / Русский)",
+		"en": "Language / 语言 (Auto / EN / 中文 / 日本語 / 한국어 / Español / Português / Русский)",
+		"ja": "言語 / Language (Auto / EN / 中文 / 日本語 / 한국어 / Español / Português / Русский)",
+		"ko": "언어 / Language (Auto / EN / 中文 / 日本語 / 한국어 / Español / Português / Русский)",
+		"es": "Idioma / Language (Auto / EN / 中文 / 日本語 / 한국어 / Español / Português / Русский)",
+		"pt": "Idioma / Language (Auto / EN / 中文 / 日本語 / 한국어 / Español / Português / Русский)",
+		"ru": "Язык / Language (Auto / EN / 中文 / 日本語 / 한국어 / Español / Português / Русский)"
+	},
+	"STAIRS": {
+		"zh": "楼梯",
+		"zh_CN": "楼梯",
+		"en": "Stairs",
+		"ja": "階段",
+		"ko": "계단",
+		"es": "Escaleras",
+		"pt": "Escadas",
+		"ru": "Лестница"
+	},
+	"RAMP": {
+		"zh": "坡道",
+		"zh_CN": "坡道",
+		"en": "Ramp",
+		"ja": "スロープ",
+		"ko": "경사로",
+		"es": "Rampa",
+		"pt": "Rampa",
+		"ru": "Рампа"
+	},
+	"WEDGE": {
+		"zh": "楔形",
+		"zh_CN": "楔形",
+		"en": "Wedge",
+		"ja": "くさび形",
+		"ko": "쐐기",
+		"es": "Cuña",
+		"pt": "Cunha",
+		"ru": "Клин"
+	},
+	"ARCH": {
+		"zh": "拱门",
+		"zh_CN": "拱门",
+		"en": "Arch",
+		"ja": "アーチ",
+		"ko": "아치",
+		"es": "Arco",
+		"pt": "Arco",
+		"ru": "Арка"
+	},
+	"CURVED_WALL": {
+		"zh": "弧形墙",
+		"zh_CN": "弧形墙",
+		"en": "Curved Wall",
+		"ja": "曲面壁",
+		"ko": "곡면 벽",
+		"es": "Muro curvo",
+		"pt": "Parede curva",
+		"ru": "Изогнутая стена"
+	},
+	"SPIRAL_STAIRS": {
+		"zh": "螺旋楼梯",
+		"zh_CN": "螺旋楼梯",
+		"en": "Spiral Stairs",
+		"ja": "らせん階段",
+		"ko": "나선 계단",
+		"es": "Escalera de caracol",
+		"pt": "Escada caracol",
+		"ru": "Винтовая лестница"
+	},
+	"RULER": {
+		"zh": "关卡标尺",
+		"zh_CN": "关卡标尺",
+		"en": "Level Ruler",
+		"ja": "レベル定規",
+		"ko": "레벨 눈금자",
+		"es": "Regla de nivel",
+		"pt": "Régua de nível",
+		"ru": "Уровневая линейка"
+	},
+	"STEP_COUNT": {
+		"zh": "台阶数",
+		"zh_CN": "台阶数",
+		"en": "Step Count",
+		"ja": "段数",
+		"ko": "계단 수",
+		"es": "Número de escalones",
+		"pt": "Número de degraus",
+		"ru": "Количество ступеней"
+	},
+	"TOTAL_HEIGHT": {
+		"zh": "总高",
+		"zh_CN": "总高",
+		"en": "Total Height",
+		"ja": "全高",
+		"ko": "총 높이",
+		"es": "Altura total",
+		"pt": "Altura total",
+		"ru": "Общая высота"
+	},
+	"TOTAL_DEPTH": {
+		"zh": "总深",
+		"zh_CN": "总深",
+		"en": "Total Depth",
+		"ja": "総奥行き",
+		"ko": "총 깊이",
+		"es": "Profundidad total",
+		"pt": "Profundidade total",
+		"ru": "Общая глубина"
+	},
+	"WIDTH": {
+		"zh": "宽度",
+		"zh_CN": "宽度",
+		"en": "Width",
+		"ja": "幅",
+		"ko": "너비",
+		"es": "Ancho",
+		"pt": "Largura",
+		"ru": "Ширина"
+	},
+	"REACHABLE": {
+		"zh": "机能可达",
+		"zh_CN": "机能可达",
+		"en": "Reachable",
+		"ja": "到達可能",
+		"ko": "도달 가능",
+		"es": "Alcanzable",
+		"pt": "Alcançável",
+		"ru": "Достижимо"
+	},
+	"UNREACHABLE": {
+		"zh": "超出机能",
+		"zh_CN": "超出机能",
+		"en": "Unreachable",
+		"ja": "到達不能",
+		"ko": "도달 불가",
+		"es": "Inalcanzable",
+		"pt": "Inalcançável",
+		"ru": "Недостижимо"
+	},
+	"WARN_STEP_ERGONOMICS": {
+		"zh": "台阶尺寸超出人体工学推荐范围（建议步高 0.15-0.20m，步深 0.25-0.30m）",
+		"zh_CN": "台阶尺寸超出人体工学推荐范围（建议步高 0.15-0.20m，步深 0.25-0.30m）",
+		"en": "Step dimensions outside ergonomic range (recommended rise 0.15-0.20m, run 0.25-0.30m)",
+		"ja": "階段寸法が人間工学の推奨範囲外です (推奨蹴上 0.15-0.20m、踏面 0.25-0.30m)",
+		"ko": "계단 치수가 인체공학적 권장 범위를 벗어났습니다 (권장 높이 0.15-0.20m, 깊이 0.25-0.30m)",
+		"es": "Dimensiones del escalón fuera del rango ergonómico (altura recomendada 0.15-0.20m, huella 0.25-0.30m)",
+		"pt": "Dimensões do degrau fora da faixa ergonômica (altura recomendada 0.15-0.20m, piso 0.25-0.30m)",
+		"ru": "Размеры ступеней вне эргономического диапазона (рекомендуемый подступенок 0.15-0.20м, проступь 0.25-0.30м)"
+	},
+	"ADD_RULER": {
+		"zh": "添加标尺",
+		"zh_CN": "添加标尺",
+		"en": "Add Ruler",
+		"ja": "定規を追加",
+		"ko": "눈금자 추가",
+		"es": "Añadir regla",
+		"pt": "Adicionar régua",
+		"ru": "Добавить линейку"
+	},
+	"ADD_RULER_TOOLTIP": {
+		"zh": "在场景中创建关卡标尺",
+		"zh_CN": "在场景中创建关卡标尺",
+		"en": "Create level ruler in scene",
+		"ja": "シーン内にレベル定規を作成",
+		"ko": "씬에 레벨 눈금자 생성",
+		"es": "Crear regla de nivel en la escena",
+		"pt": "Criar régua de nível na cena",
+		"ru": "Создать уровневую линейку в сцене"
+	},
+	"TOGGLE_RULERS": {
+		"zh": "标尺可见",
+		"zh_CN": "标尺可见",
+		"en": "Rulers Visible",
+		"ja": "定規の表示",
+		"ko": "눈금자 표시",
+		"es": "Reglas visibles",
+		"pt": "Réguas visíveis",
+		"ru": "Видимость линеек"
+	},
+	"TOGGLE_RULERS_TOOLTIP": {
+		"zh": "显示/隐藏场景中全部标尺",
+		"zh_CN": "显示/隐藏场景中全部标尺",
+		"en": "Show/hide all level rulers in scene",
+		"ja": "シーン内のすべての定規を表示/非表示",
+		"ko": "씬의 모든 눈금자 표시/숨기기",
+		"es": "Mostrar/ocultar todas las reglas en la escena",
+		"pt": "Mostrar/ocultar todas as réguas na cena",
+		"ru": "Показать/скрыть все линейки в сцене"
+	}
+}
+
+static var _reverse_initialized: bool = false
+static var _reverse_map: Dictionary[String, String] = {}
+
+static func _ensure_reverse_map() -> void:
+	if _reverse_initialized:
+		return
+	_reverse_initialized = true
+	var all: Dictionary = table()
+	for key: String in all:
+		var entry: Dictionary = all[key]
+		for lang: String in entry:
+			var text: String = entry[lang]
+			_reverse_map[text] = key
+		_reverse_map[key] = key
+	
+	# Node name and legacy compatibility aliases
+	_reverse_map["PresetLight"] = "GRID_LIGHT"
+	_reverse_map["PRESET_LIGHT"] = "GRID_LIGHT"
+	_reverse_map["PresetDark"] = "GRID_DARK"
+	_reverse_map["PRESET_DARK"] = "GRID_DARK"
+	_reverse_map["PresetOrange"] = "GRID_ORANGE"
+	_reverse_map["PRESET_ORANGE"] = "GRID_ORANGE"
+	_reverse_map["PresetNone"] = "MATERIAL_NONE"
+	_reverse_map["PRESET_NONE"] = "MATERIAL_NONE"
+	_reverse_map["MaterialPicker"] = "MATERIAL_CUSTOM"
+	_reverse_map["MATERIAL_PICKER"] = "MATERIAL_CUSTOM"
+	_reverse_map["ApplyToSelected"] = "APPLY_MATERIAL_TO_SELECTED"
+	_reverse_map["APPLY_TO_SELECTED"] = "APPLY_MATERIAL_TO_SELECTED"
+	_reverse_map["Refresh"] = "REFRESH"
+	_reverse_map["Bake"] = "BAKE"
+	_reverse_map["AddRuler"] = "ADD_RULER"
+	_reverse_map["ADD_RULER"] = "ADD_RULER"
+	_reverse_map["ToggleRulers"] = "TOGGLE_RULERS"
+	_reverse_map["TOGGLE_RULERS"] = "TOGGLE_RULERS"
+	_reverse_map["创建 "] = "CREATE_NODE"
+	_reverse_map["Create "] = "CREATE_NODE"
+	_reverse_map["Language / 语言"] = "LANGUAGE_TOOLTIP"
+	_reverse_map["CSGBox3D"] = "BOX"
+	_reverse_map["CSGCylinder3D"] = "CYLINDER"
+	_reverse_map["CSGMesh3D"] = "MESH"
+	_reverse_map["CSGPolygon3D"] = "POLYGON"
+	_reverse_map["CSGSphere3D"] = "SPHERE"
+	_reverse_map["CSGTorus3D"] = "TORUS"
+	_reverse_map["CSGRepeater3D"] = "REPEATER"
+	_reverse_map["CSGSpreader3D"] = "SPREADER"
+	_reverse_map["CSGStairs3D"] = "STAIRS"
+	_reverse_map["CSGStairs"] = "STAIRS"
+	_reverse_map["Stairs"] = "STAIRS"
+	_reverse_map["CSGRuler3D"] = "RULER"
+	_reverse_map["CSGRuler"] = "RULER"
+	_reverse_map["Ruler"] = "RULER"
+	_reverse_map["Ramp"] = "RAMP"
+	_reverse_map["CSGWedge3D"] = "WEDGE"
+	_reverse_map["CSGArch3D"] = "ARCH"
+	_reverse_map["CSGCurvedWall3D"] = "CURVED_WALL"
+	_reverse_map["CSGSpiralStairs3D"] = "SPIRAL_STAIRS"
+
+static func _normalize_locale(loc: String) -> String:
+	var l := loc.to_lower()
+	if l.begins_with("zh"):
+		return "zh_CN"
+	elif l.begins_with("ja"):
+		return "ja"
+	elif l.begins_with("ko"):
+		return "ko"
+	elif l.begins_with("es"):
+		return "es"
+	elif l.begins_with("pt"):
+		return "pt"
+	elif l.begins_with("ru"):
+		return "ru"
+	return "en"
+
+static func get_locale() -> String:
+	var config: CsgBlockoutConfig = CsgBlockoutConfig.get_config()
+	if config != null:
+		var override_lang: String = config.language_override
+		if not override_lang.is_empty() and override_lang != "auto":
+			return _normalize_locale(override_lang)
+			
+	# 1. Safely check EditorInterface editor settings in editor hint
+	# Reached dynamically so this script still compiles in exported games.
+	if Engine.is_editor_hint() and Engine.has_singleton(&"EditorInterface"):
+		var editor_settings: Object = Engine.get_singleton(&"EditorInterface").call(&"get_editor_settings")
+		if editor_settings != null:
+			var lang_setting: Variant = editor_settings.call(&"get_setting", "interface/editor/editor_language")
+			if lang_setting != null:
+				var s := String(lang_setting).strip_edges()
+				if not s.is_empty() and s != "default" and s != "auto":
+					return _normalize_locale(s)
+					
+	# 2. Check TranslationServer tool locale
+	var tool_locale: String = TranslationServer.get_tool_locale()
+	if not tool_locale.is_empty() and tool_locale != "en":
+		return _normalize_locale(tool_locale)
+		
+	var general_locale: String = TranslationServer.get_locale()
+	if not general_locale.is_empty() and general_locale != "en":
+		return _normalize_locale(general_locale)
+		
+	# 3. Check OS locale language
+	var os_locale: String = OS.get_locale_language()
+	if not os_locale.is_empty():
+		return _normalize_locale(os_locale)
+		
+	var os_full: String = OS.get_locale()
+	if not os_full.is_empty():
+		return _normalize_locale(os_full)
+		
+	return "en"
+
+static func t(key_or_text: String) -> String:
+	_ensure_reverse_map()
+	var canonical_key: String = _reverse_map.get(key_or_text, key_or_text)
+	var all: Dictionary = table()
+	if all.has(canonical_key):
+		var lang: String = get_locale()
+		var entry: Dictionary = all[canonical_key]
+		if entry.has(lang):
+			return entry[lang]
+		if (lang == "zh" or lang == "zh_CN") and entry.has("zh_CN"):
+			return entry["zh_CN"]
+		if (lang == "zh" or lang == "zh_CN") and entry.has("zh"):
+			return entry["zh"]
+		return entry.get("en", key_or_text)
+	return key_or_text
+
+static func tf(key_or_text: String, args: Array[Variant] = []) -> String:
+	var tmpl: String = t(key_or_text)
+	if args.is_empty():
+		return tmpl
+	return tmpl % args
+
+static func translate_node(node: Node) -> void:
+	if node == null:
+		return
+		
+	# Disable Godot engine auto_translate to prevent Godot's built-in PO dictionary
+	# from hijacking common English words (e.g. Box, Cylinder, Mesh, Polygon, Sphere) back into Chinese.
+	if "auto_translate_mode" in node:
+		node.set("auto_translate_mode", 2) # Node.AUTO_TRANSLATE_MODE_DISABLED
+	if "auto_translate" in node:
+		node.set("auto_translate", false)
+		
+	if node is OptionButton or node.name == "LanguageToggle":
+		for child: Node in node.get_children():
+			translate_node(child)
+		return
+		
+	_ensure_reverse_map()
+	
+	if node is Control:
+		if not node.has_meta("i18n_tooltip_key"):
+			var key: String = ""
+			if node.tooltip_text != "":
+				key = _reverse_map.get(node.tooltip_text, "")
+			if key == "":
+				var node_name_str := String(node.name)
+				key = _reverse_map.get(node_name_str, "")
+				if key == "":
+					var snake_key := node_name_str.to_snake_case().to_upper()
+					key = _reverse_map.get(snake_key, "")
+			if key != "":
+				node.set_meta("i18n_tooltip_key", key)
+				
+		if node.has_meta("i18n_tooltip_key"):
+			node.tooltip_text = t(node.get_meta("i18n_tooltip_key"))
+			
+	if node is Button or node is Label:
+		if "text" in node and typeof(node.get("text")) == TYPE_STRING and node.get("text") != "":
+			if not node.has_meta("i18n_text_key"):
+				var key: String = _reverse_map.get(node.get("text"), "")
+				if key == "":
+					var node_name_str := String(node.name)
+					key = _reverse_map.get(node_name_str, "")
+					if key == "":
+						var snake_key := node_name_str.to_snake_case().to_upper()
+						key = _reverse_map.get(snake_key, "")
+				if key != "":
+					node.set_meta("i18n_text_key", key)
+			if node.has_meta("i18n_text_key"):
+				node.set("text", t(node.get_meta("i18n_text_key")))
+				
+	for child: Node in node.get_children():
+		translate_node(child)
